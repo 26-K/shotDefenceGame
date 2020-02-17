@@ -19,7 +19,7 @@ public class PlayerShot : MonoBehaviour
     void Update()
     {
         // 左クリックされた瞬間にif文の中を実行
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             Vector2 scrPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ShootNWay(GetAim(scrPos, this.transform.position), 15, Vector2.Distance(scrPos, this.transform.position) * baseShotSpeed, 1);

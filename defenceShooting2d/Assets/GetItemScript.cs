@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpItem : MonoBehaviour
+public class GetItemScript : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {

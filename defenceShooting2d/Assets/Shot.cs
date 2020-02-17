@@ -9,17 +9,49 @@ public class Shot : MonoBehaviour
     public Vector3 localGravity;
     // 弾オブジェクトのRigidbody2Dの入れ物
     public Rigidbody rb3d;
+    Renderer targetRenderer;
+
+    int removeTimer = 0;
+
+    bool inGamefield = true;
+
+    public int removeTime = 120;
     // 弾オブジェクトの移動係数（速度調整用）
     void Start()
     {
         // 出現から３秒後に弾オブジェクトを消滅させる（メモリの節約）
-        Destroy(gameObject, 3.0f);
+        targetRenderer = GetComponent<Renderer>();
     }
     void Update()
     {
-
+        if (inGamefield)
+        {
+            // 画面内に表示されている場合の処理
+            removeTimer = 0;
+        }
+        else
+        {
+            // 画面内に表示されていない場合の処理
+            removeTimer++;
+        }
+        //一定時間画面外にいると消滅する
+        if (removeTimer >= removeTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
+    void OnBecameVisible()
+    {
+        // 表示されるようになった時の処理
+        inGamefield = true;
+        removeTimer = 0;
+    }
+    void OnBecameInvisible()
+    {
+        // 表示されなくなった時の処理
+        inGamefield = false;
+    }
     public void Init(float angle, float speed)
     {
         // 弾オブジェクトの移動量ベクトルを作成（数値情報）

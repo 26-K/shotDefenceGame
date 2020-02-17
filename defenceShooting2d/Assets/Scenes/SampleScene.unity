@@ -238,9 +238,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 333374072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 686a1c7044cc55b42a424befb5f0bc85, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aada7531b2f6f14bafbeb5b9cfb5a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1134839963}
+  increaseScore: 100
 --- !u!4 &333374074
 Transform:
   m_ObjectHideFlags: 0
@@ -514,8 +516,9 @@ GameObject:
   - component: {fileID: 1134839962}
   - component: {fileID: 1134839964}
   - component: {fileID: 1134839963}
+  - component: {fileID: 1134839965}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -86.5, y: -286.5}
+  m_AnchoredPosition: {x: -448, y: -912}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1134839963
@@ -571,7 +574,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Score
 --- !u!222 &1134839964
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -580,6 +583,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134839961}
   m_CullTransparentMesh: 0
+--- !u!114 &1134839965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134839961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804047cdf4f840c4596f0de537e34f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &1593156487
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666941437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: -2.34, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 247465483}
@@ -717,7 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_shotPrefab: {fileID: 4259884105691198963, guid: 1aa8e0d552530434b860cd614becbefa,
     type: 3}
-  baseShotSpeed: 5
+  baseShotSpeed: 12
   baseShotCoolTime: 3
 --- !u!1 &1695089174
 GameObject:
